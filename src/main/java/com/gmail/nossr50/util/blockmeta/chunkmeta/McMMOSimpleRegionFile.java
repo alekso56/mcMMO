@@ -217,13 +217,6 @@ public class McMMOSimpleRegionFile {
             }
 
             Boolean old = inuse.set(i, used);
-            if (old != null && old == used) {
-                if (old) {
-                    throw new IllegalStateException("Attempting to overwrite an in-use segment");
-                }
-
-                throw new IllegalStateException("Attempting to delete empty segment");
-            }
         }
 
         return dataStart[index];
